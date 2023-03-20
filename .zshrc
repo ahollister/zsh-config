@@ -43,7 +43,7 @@ __git_files () {
 #################
 alias fucking="sudo"
 # CONFIG
-alias zshconfig="nvim ~/.zshrc"
+alias zshconfig="nvim ~/.config/zsh/.zshrc"
 alias vimconfig="nvim ~/.vimrc"
 alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
 alias tmuxreload="tmux source-file ~/.config/tmux/tmux.conf"
