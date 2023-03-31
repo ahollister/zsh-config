@@ -14,6 +14,8 @@ ZSH_DISABLE_COMPFIX=true
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/adam/.oh-my-zsh"
 path+=('/Users/adam/.composer/vendor/bin')
+path+=('/Users/adam/nvim-macos/bin')
+path+=('/Users/adam/.local/bin')
 #path+=('/Users/adam/Library/Python/3.8/bin')
 
 # Theme setup
@@ -77,6 +79,24 @@ export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
 # CUSTOMIZATIONS
 ###################
 source  ~/zsh-z/zsh-z.plugin.zsh
+
+# USE MULTIPLE NVIM CONFIGURATIONS
+##################################
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims() {
+  items=("default" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
 
 # SOURCE OH MY ZSH PLUGINS
 ############################
