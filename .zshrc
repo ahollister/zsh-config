@@ -16,12 +16,18 @@ export ZSH="/Users/adam/.oh-my-zsh"
 path+=('/Users/adam/.composer/vendor/bin')
 path+=('/Users/adam/nvim-macos/bin')
 path+=('/Users/adam/.local/bin')
+path+=('/Users/adam/.tmuxifier/bin')
 #path+=('/Users/adam/Library/Python/3.8/bin')
 
 # Theme setup
 ZSH_THEME="typewritten/typewritten"
 
 export PATH
+
+export EDITOR=nvim
+
+# Init TMUXIFIER
+eval "$(tmuxifier init -)"
 
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias)
@@ -59,7 +65,8 @@ alias gd="git diff"
 alias gitundol="git reset --soft HEAD^"
 
 # TMUX
-alias work="tmux attach -t work || tmux new -s work"
+alias tm="tmux"
+alias tmf="tmuxifier"
 
 # PROJECTS
 alias mecum="cd ~/Dev/AmericanEagle/MECUM/mecum-frontend && nvim ."
@@ -83,9 +90,10 @@ source  ~/zsh-z/zsh-z.plugin.zsh
 # USE MULTIPLE NVIM CONFIGURATIONS
 ##################################
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-nvchad="NVIM_APPNAME=nvchad nvim"
 
 function nvims() {
-  items=("default" "AstroNvim")
+  items=("default" "AstroNvim" "nvchad")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
