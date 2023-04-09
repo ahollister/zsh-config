@@ -67,6 +67,9 @@ alias gitundol="git reset --soft HEAD^"
 # TMUX
 alias tm="tmux"
 alias tmf="tmuxifier"
+alias tmfl="tmuxifier load-session"
+alias tmfn="tmuxifier new-session"
+alias tmfe="tmuxifier edit-session"
 
 # PROJECTS
 alias mecum="cd ~/Dev/AmericanEagle/MECUM/mecum-frontend && nvim ."
