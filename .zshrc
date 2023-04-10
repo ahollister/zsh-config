@@ -71,6 +71,8 @@ alias tmfl="tmuxifier load-session"
 alias tmfn="tmuxifier new-session"
 alias tmfe="tmuxifier edit-session"
 
+alias l="exa -l -a --icons"
+
 # PROJECTS
 alias mecum="cd ~/Dev/AmericanEagle/MECUM/mecum-frontend && nvim ."
 
