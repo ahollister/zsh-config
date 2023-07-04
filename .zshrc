@@ -13,11 +13,16 @@ ZSH_DISABLE_COMPFIX=true
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/adam/.oh-my-zsh"
+path+=('/opt/homebrew/bin/')
 path+=('/Users/adam/.composer/vendor/bin')
 path+=('/Users/adam/nvim-macos/bin')
 path+=('/Users/adam/.local/bin')
 path+=('/Users/adam/.tmuxifier/bin')
 #path+=('/Users/adam/Library/Python/3.8/bin')
+# PATH modifications
+export PATH=/usr/local/bin/:~/Library/Android/sdk/platform-tools/:$PATH
+export PATH="/Users/adam/git-fuzzy/bin:$PATH"
+# Bun
 
 # Theme setup
 ZSH_THEME="typewritten/typewritten"
@@ -36,6 +41,7 @@ eval $(thefuck --alias)
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
   history
 )
 
@@ -79,10 +85,6 @@ alias mecum="cd ~/Dev/AmericanEagle/MECUM/mecum-frontend && nvim ."
 # AUDIO
 alias fixaudio="sudo killall coreaudiod"
 
-# PATH modifications
-export PATH=/usr/local/bin/:~/Library/Android/sdk/platform-tools/:$PATH
-export PATH="/Users/adam/git-fuzzy/bin:$PATH"
-# Bun
 export BUN_INSTALL="/Users/adam/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/php@8.0/bin:$PATH"
@@ -113,7 +115,7 @@ bindkey -s ^a "nvims\n"
 
 # SOURCE OH MY ZSH PLUGINS
 ############################
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /
 source ~/forgit/forgit.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -141,3 +143,5 @@ unset __conda_setup
 # bun completions
 [ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
 
+# ZSH AUTOSUGGESTIONS
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
