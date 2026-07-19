@@ -1,0 +1,3 @@
+# Keep this rule tracked, but ignore every local configuration file.
+*
+!.gitignore
