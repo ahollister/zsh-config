@@ -5,6 +5,7 @@ alias fucking='sudo'
 
 # Configuration
 alias zshconfig='nvim ~/.config/zsh/.zshrc'
+alias config='nvim ~/.config'
 alias vimconfig='nvim ~/.vimrc'
 alias tmuxconfig='nvim ~/.config/tmux/tmux.conf'
 alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf'

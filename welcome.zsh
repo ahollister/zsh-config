@@ -18,7 +18,7 @@ unset uptime_summary
 scriptkid_welcome() {
   local script line summary
   local -a scripts
-  local scriptkid_bin="$HOME/Dev/scriptkid/bin"
+  local scriptkid_bin="$HOME/.scriptkid/bin"
 
   scripts=("$scriptkid_bin"/*(N))
   (( $#scripts )) || return
